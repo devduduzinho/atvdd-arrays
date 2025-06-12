@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float temperaturas[20], soma = 0, media, variancia = 0;
+
+    for (int i = 0; i < 20; i++) {
+        printf("Digite a %dª temperatura: ", i + 1);
+        scanf("%f", &temperaturas[i]);
+        soma += temperaturas[i];
+    }
+
+    media = soma / 20;
+
+    for (int i = 0; i < 20; i++) {
+        variancia += pow(temperaturas[i] - media, 2);
+    }
+
+    variancia /= 20;
+    float desvio = sqrt(variancia);
+
+    printf("Média: %.2f\nVariância: %.2f\nDesvio padrão: %.2f\n", media, variancia, desvio);
+
+    return 0;
+}
